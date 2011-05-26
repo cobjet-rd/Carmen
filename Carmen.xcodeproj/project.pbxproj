@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		612992C3138EC6F1002B3EF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992C2138EC6F1002B3EF4 /* UIKit.framework */; };
+		612992C5138EC6F1002B3EF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992C4138EC6F1002B3EF4 /* Foundation.framework */; };
+		612992C7138EC6F1002B3EF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992C6138EC6F1002B3EF4 /* CoreGraphics.framework */; };
+		612992CD138EC6F1002B3EF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 612992CB138EC6F1002B3EF4 /* InfoPlist.strings */; };
+		612992D0138EC6F1002B3EF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992CF138EC6F1002B3EF4 /* main.m */; };
+		612992D3138EC6F1002B3EF4 /* CarmenAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992D2138EC6F1002B3EF4 /* CarmenAppDelegate.m */; };
+		612992D6138EC6F1002B3EF4 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612992D4138EC6F1002B3EF4 /* MainWindow.xib */; };
+		612992D9138EC6F1002B3EF4 /* CarmenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992D8138EC6F1002B3EF4 /* CarmenViewController.m */; };
+		612992DC138EC6F1002B3EF4 /* CarmenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612992DA138EC6F1002B3EF4 /* CarmenViewController.xib */; };
+		612992E3138EC6F1002B3EF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992C2138EC6F1002B3EF4 /* UIKit.framework */; };
+		612992E4138EC6F1002B3EF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992C4138EC6F1002B3EF4 /* Foundation.framework */; };
+		612992E5138EC6F1002B3EF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992C6138EC6F1002B3EF4 /* CoreGraphics.framework */; };
+		612992ED138EC6F1002B3EF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 612992EB138EC6F1002B3EF4 /* InfoPlist.strings */; };
+		612992F0138EC6F1002B3EF4 /* CarmenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 612992EF138EC6F1002B3EF4 /* CarmenTests.h */; };
+		612992F2138EC6F1002B3EF4 /* CarmenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992F1138EC6F1002B3EF4 /* CarmenTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		612992E6138EC6F1002B3EF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 612992B5138EC6F1002B3EF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 612992BD138EC6F1002B3EF4;
+			remoteInfo = Carmen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		612992BE138EC6F1002B3EF4 /* Carmen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carmen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		612992C2138EC6F1002B3EF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		612992C4138EC6F1002B3EF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		612992C6138EC6F1002B3EF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		612992CA138EC6F1002B3EF4 /* Carmen-Info.plist */ = {isa = PBXFileReference; path = "Carmen-Info.plist"; sourceTree = "<group>"; };
+		612992CC138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		612992CE138EC6F1002B3EF4 /* Carmen-Prefix.pch */ = {isa = PBXFileReference; path = "Carmen-Prefix.pch"; sourceTree = "<group>"; };
+		612992CF138EC6F1002B3EF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		612992D1138EC6F1002B3EF4 /* CarmenAppDelegate.h */ = {isa = PBXFileReference; path = CarmenAppDelegate.h; sourceTree = "<group>"; };
+		612992D2138EC6F1002B3EF4 /* CarmenAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenAppDelegate.m; sourceTree = "<group>"; };
+		612992D5138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		612992D7138EC6F1002B3EF4 /* CarmenViewController.h */ = {isa = PBXFileReference; path = CarmenViewController.h; sourceTree = "<group>"; };
+		612992D8138EC6F1002B3EF4 /* CarmenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenViewController.m; sourceTree = "<group>"; };
+		612992DB138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CarmenViewController.xib; sourceTree = "<group>"; };
+		612992E2138EC6F1002B3EF4 /* CarmenTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarmenTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		612992EA138EC6F1002B3EF4 /* CarmenTests-Info.plist */ = {isa = PBXFileReference; path = "CarmenTests-Info.plist"; sourceTree = "<group>"; };
+		612992EC138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		612992EE138EC6F1002B3EF4 /* CarmenTests-Prefix.pch */ = {isa = PBXFileReference; path = "CarmenTests-Prefix.pch"; sourceTree = "<group>"; };
+		612992EF138EC6F1002B3EF4 /* CarmenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarmenTests.h; sourceTree = "<group>"; };
+		612992F1138EC6F1002B3EF4 /* CarmenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		612992BB138EC6F1002B3EF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612992C3138EC6F1002B3EF4 /* UIKit.framework in Frameworks */,
+				612992C5138EC6F1002B3EF4 /* Foundation.framework in Frameworks */,
+				612992C7138EC6F1002B3EF4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612992DE138EC6F1002B3EF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612992E3138EC6F1002B3EF4 /* UIKit.framework in Frameworks */,
+				612992E4138EC6F1002B3EF4 /* Foundation.framework in Frameworks */,
+				612992E5138EC6F1002B3EF4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		612992B3138EC6F1002B3EF4 = {
+			isa = PBXGroup;
+			children = (
+				612992C8138EC6F1002B3EF4 /* Carmen */,
+				612992E8138EC6F1002B3EF4 /* CarmenTests */,
+				612992C1138EC6F1002B3EF4 /* Frameworks */,
+				612992BF138EC6F1002B3EF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		612992BF138EC6F1002B3EF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				612992BE138EC6F1002B3EF4 /* Carmen.app */,
+				612992E2138EC6F1002B3EF4 /* CarmenTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		612992C1138EC6F1002B3EF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				612992C2138EC6F1002B3EF4 /* UIKit.framework */,
+				612992C4138EC6F1002B3EF4 /* Foundation.framework */,
+				612992C6138EC6F1002B3EF4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		612992C8138EC6F1002B3EF4 /* Carmen */ = {
+			isa = PBXGroup;
+			children = (
+				612992D1138EC6F1002B3EF4 /* CarmenAppDelegate.h */,
+				612992D2138EC6F1002B3EF4 /* CarmenAppDelegate.m */,
+				612992D4138EC6F1002B3EF4 /* MainWindow.xib */,
+				612992D7138EC6F1002B3EF4 /* CarmenViewController.h */,
+				612992D8138EC6F1002B3EF4 /* CarmenViewController.m */,
+				612992DA138EC6F1002B3EF4 /* CarmenViewController.xib */,
+				612992C9138EC6F1002B3EF4 /* Supporting Files */,
+			);
+			path = Carmen;
+			sourceTree = "<group>";
+		};
+		612992C9138EC6F1002B3EF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				612992CA138EC6F1002B3EF4 /* Carmen-Info.plist */,
+				612992CB138EC6F1002B3EF4 /* InfoPlist.strings */,
+				612992CE138EC6F1002B3EF4 /* Carmen-Prefix.pch */,
+				612992CF138EC6F1002B3EF4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		612992E8138EC6F1002B3EF4 /* CarmenTests */ = {
+			isa = PBXGroup;
+			children = (
+				612992EF138EC6F1002B3EF4 /* CarmenTests.h */,
+				612992F1138EC6F1002B3EF4 /* CarmenTests.m */,
+				612992E9138EC6F1002B3EF4 /* Supporting Files */,
+			);
+			path = CarmenTests;
+			sourceTree = "<group>";
+		};
+		612992E9138EC6F1002B3EF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				612992EA138EC6F1002B3EF4 /* CarmenTests-Info.plist */,
+				612992EB138EC6F1002B3EF4 /* InfoPlist.strings */,
+				612992EE138EC6F1002B3EF4 /* CarmenTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		612992BD138EC6F1002B3EF4 /* Carmen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 612992F5138EC6F1002B3EF4 /* Build configuration list for PBXNativeTarget "Carmen" */;
+			buildPhases = (
+				612992BA138EC6F1002B3EF4 /* Sources */,
+				612992BB138EC6F1002B3EF4 /* Frameworks */,
+				612992BC138EC6F1002B3EF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Carmen;
+			productName = Carmen;
+			productReference = 612992BE138EC6F1002B3EF4 /* Carmen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		612992E1138EC6F1002B3EF4 /* CarmenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 612992F8138EC6F1002B3EF4 /* Build configuration list for PBXNativeTarget "CarmenTests" */;
+			buildPhases = (
+				612992DD138EC6F1002B3EF4 /* Sources */,
+				612992DE138EC6F1002B3EF4 /* Frameworks */,
+				612992DF138EC6F1002B3EF4 /* Resources */,
+				612992E0138EC6F1002B3EF4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				612992E7138EC6F1002B3EF4 /* PBXTargetDependency */,
+			);
+			name = CarmenTests;
+			productName = CarmenTests;
+			productReference = 612992E2138EC6F1002B3EF4 /* CarmenTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		612992B5138EC6F1002B3EF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Apollic Software, LLC";
+			};
+			buildConfigurationList = 612992B8138EC6F1002B3EF4 /* Build configuration list for PBXProject "Carmen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 612992B3138EC6F1002B3EF4;
+			productRefGroup = 612992BF138EC6F1002B3EF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				612992BD138EC6F1002B3EF4 /* Carmen */,
+				612992E1138EC6F1002B3EF4 /* CarmenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		612992BC138EC6F1002B3EF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612992CD138EC6F1002B3EF4 /* InfoPlist.strings in Resources */,
+				612992D6138EC6F1002B3EF4 /* MainWindow.xib in Resources */,
+				612992DC138EC6F1002B3EF4 /* CarmenViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612992DF138EC6F1002B3EF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612992ED138EC6F1002B3EF4 /* InfoPlist.strings in Resources */,
+				612992F0138EC6F1002B3EF4 /* CarmenTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		612992E0138EC6F1002B3EF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		612992BA138EC6F1002B3EF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612992D0138EC6F1002B3EF4 /* main.m in Sources */,
+				612992D3138EC6F1002B3EF4 /* CarmenAppDelegate.m in Sources */,
+				612992D9138EC6F1002B3EF4 /* CarmenViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612992DD138EC6F1002B3EF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612992F2138EC6F1002B3EF4 /* CarmenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		612992E7138EC6F1002B3EF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 612992BD138EC6F1002B3EF4 /* Carmen */;
+			targetProxy = 612992E6138EC6F1002B3EF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		612992CB138EC6F1002B3EF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612992CC138EC6F1002B3EF4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		612992D4138EC6F1002B3EF4 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612992D5138EC6F1002B3EF4 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		612992DA138EC6F1002B3EF4 /* CarmenViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612992DB138EC6F1002B3EF4 /* en */,
+			);
+			name = CarmenViewController.xib;
+			sourceTree = "<group>";
+		};
+		612992EB138EC6F1002B3EF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				612992EC138EC6F1002B3EF4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		612992F3138EC6F1002B3EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		612992F4138EC6F1002B3EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		612992F6138EC6F1002B3EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Carmen/Carmen-Prefix.pch";
+				INFOPLIST_FILE = "Carmen/Carmen-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		612992F7138EC6F1002B3EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Carmen/Carmen-Prefix.pch";
+				INFOPLIST_FILE = "Carmen/Carmen-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		612992F9138EC6F1002B3EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Carmen.app/Carmen";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CarmenTests/CarmenTests-Prefix.pch";
+				INFOPLIST_FILE = "CarmenTests/CarmenTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		612992FA138EC6F1002B3EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Carmen.app/Carmen";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CarmenTests/CarmenTests-Prefix.pch";
+				INFOPLIST_FILE = "CarmenTests/CarmenTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		612992B8138EC6F1002B3EF4 /* Build configuration list for PBXProject "Carmen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612992F3138EC6F1002B3EF4 /* Debug */,
+				612992F4138EC6F1002B3EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		612992F5138EC6F1002B3EF4 /* Build configuration list for PBXNativeTarget "Carmen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612992F6138EC6F1002B3EF4 /* Debug */,
+				612992F7138EC6F1002B3EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		612992F8138EC6F1002B3EF4 /* Build configuration list for PBXNativeTarget "CarmenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612992F9138EC6F1002B3EF4 /* Debug */,
+				612992FA138EC6F1002B3EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 612992B5138EC6F1002B3EF4 /* Project object */;
+}
