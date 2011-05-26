@@ -39,20 +39,20 @@
 		612992C2138EC6F1002B3EF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		612992C4138EC6F1002B3EF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		612992C6138EC6F1002B3EF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		612992CA138EC6F1002B3EF4 /* Carmen-Info.plist */ = {isa = PBXFileReference; path = "Carmen-Info.plist"; sourceTree = "<group>"; };
+		612992CA138EC6F1002B3EF4 /* Carmen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Carmen-Info.plist"; sourceTree = "<group>"; };
 		612992CC138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		612992CE138EC6F1002B3EF4 /* Carmen-Prefix.pch */ = {isa = PBXFileReference; path = "Carmen-Prefix.pch"; sourceTree = "<group>"; };
+		612992CE138EC6F1002B3EF4 /* Carmen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carmen-Prefix.pch"; sourceTree = "<group>"; };
 		612992CF138EC6F1002B3EF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		612992D1138EC6F1002B3EF4 /* CarmenAppDelegate.h */ = {isa = PBXFileReference; path = CarmenAppDelegate.h; sourceTree = "<group>"; };
+		612992D1138EC6F1002B3EF4 /* CarmenAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarmenAppDelegate.h; sourceTree = "<group>"; };
 		612992D2138EC6F1002B3EF4 /* CarmenAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenAppDelegate.m; sourceTree = "<group>"; };
 		612992D5138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		612992D7138EC6F1002B3EF4 /* CarmenViewController.h */ = {isa = PBXFileReference; path = CarmenViewController.h; sourceTree = "<group>"; };
+		612992D7138EC6F1002B3EF4 /* CarmenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarmenViewController.h; sourceTree = "<group>"; };
 		612992D8138EC6F1002B3EF4 /* CarmenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenViewController.m; sourceTree = "<group>"; };
 		612992DB138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CarmenViewController.xib; sourceTree = "<group>"; };
 		612992E2138EC6F1002B3EF4 /* CarmenTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarmenTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		612992EA138EC6F1002B3EF4 /* CarmenTests-Info.plist */ = {isa = PBXFileReference; path = "CarmenTests-Info.plist"; sourceTree = "<group>"; };
+		612992EA138EC6F1002B3EF4 /* CarmenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CarmenTests-Info.plist"; sourceTree = "<group>"; };
 		612992EC138EC6F1002B3EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		612992EE138EC6F1002B3EF4 /* CarmenTests-Prefix.pch */ = {isa = PBXFileReference; path = "CarmenTests-Prefix.pch"; sourceTree = "<group>"; };
+		612992EE138EC6F1002B3EF4 /* CarmenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarmenTests-Prefix.pch"; sourceTree = "<group>"; };
 		612992EF138EC6F1002B3EF4 /* CarmenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarmenTests.h; sourceTree = "<group>"; };
 		612992F1138EC6F1002B3EF4 /* CarmenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
