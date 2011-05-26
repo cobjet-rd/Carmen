@@ -9,14 +9,15 @@
 #import "CarmenViewController.h"
 
 @implementation CarmenViewController
+@synthesize CLController;
+@synthesize locLabel;
 
-- (void)dealloc
-{
+- (void)dealloc {
+    [CLController release];
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
@@ -25,23 +26,30 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CLController = [[CoreLocationController alloc] init];
+    CLController.delegate = self;
+    [CLController.locMgr startUpdatingLocation];
+    
 }
-*/
 
-- (void)viewDidUnload
-{
+- (void)locationUpdate:(CLLocation *)location {
+    locLabel.text = [location description];
+}
+
+- (void)locationError:(NSError *)error {
+    locLabel.text = [error description];
+}
+
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }

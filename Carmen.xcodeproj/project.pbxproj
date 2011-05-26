@@ -22,6 +22,8 @@
 		612992ED138EC6F1002B3EF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 612992EB138EC6F1002B3EF4 /* InfoPlist.strings */; };
 		612992F0138EC6F1002B3EF4 /* CarmenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 612992EF138EC6F1002B3EF4 /* CarmenTests.h */; };
 		612992F2138EC6F1002B3EF4 /* CarmenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992F1138EC6F1002B3EF4 /* CarmenTests.m */; };
+		612992FD138EC891002B3EF4 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992FC138EC891002B3EF4 /* CoreLocationController.m */; };
+		612992FF138EC99F002B3EF4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992FE138EC99E002B3EF4 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		612992EE138EC6F1002B3EF4 /* CarmenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarmenTests-Prefix.pch"; sourceTree = "<group>"; };
 		612992EF138EC6F1002B3EF4 /* CarmenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarmenTests.h; sourceTree = "<group>"; };
 		612992F1138EC6F1002B3EF4 /* CarmenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenTests.m; sourceTree = "<group>"; };
+		612992FB138EC891002B3EF4 /* CoreLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationController.h; sourceTree = "<group>"; };
+		612992FC138EC891002B3EF4 /* CoreLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationController.m; sourceTree = "<group>"; };
+		612992FE138EC99E002B3EF4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612992FF138EC99F002B3EF4 /* CoreLocation.framework in Frameworks */,
 				612992C3138EC6F1002B3EF4 /* UIKit.framework in Frameworks */,
 				612992C5138EC6F1002B3EF4 /* Foundation.framework in Frameworks */,
 				612992C7138EC6F1002B3EF4 /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +109,7 @@
 		612992C1138EC6F1002B3EF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				612992FE138EC99E002B3EF4 /* CoreLocation.framework */,
 				612992C2138EC6F1002B3EF4 /* UIKit.framework */,
 				612992C4138EC6F1002B3EF4 /* Foundation.framework */,
 				612992C6138EC6F1002B3EF4 /* CoreGraphics.framework */,
@@ -120,6 +127,8 @@
 				612992D8138EC6F1002B3EF4 /* CarmenViewController.m */,
 				612992DA138EC6F1002B3EF4 /* CarmenViewController.xib */,
 				612992C9138EC6F1002B3EF4 /* Supporting Files */,
+				612992FB138EC891002B3EF4 /* CoreLocationController.h */,
+				612992FC138EC891002B3EF4 /* CoreLocationController.m */,
 			);
 			path = Carmen;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 				612992D0138EC6F1002B3EF4 /* main.m in Sources */,
 				612992D3138EC6F1002B3EF4 /* CarmenAppDelegate.m in Sources */,
 				612992D9138EC6F1002B3EF4 /* CarmenViewController.m in Sources */,
+				612992FD138EC891002B3EF4 /* CoreLocationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
