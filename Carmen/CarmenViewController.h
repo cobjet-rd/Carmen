@@ -36,5 +36,5 @@
 - (IBAction)hideKeyboard:(id)sender;
 - (void)stopUpdatingLocation:(NSString *)state;
 - (void)switchToBackgroundMode:(BOOL)background;
-- (void)slideViewMovedUp:(BOOL)movedUp ;
+- (void)slideViewMovedUp:(BOOL)movedUp;
 @end

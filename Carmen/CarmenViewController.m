@@ -35,10 +35,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
@@ -50,8 +47,6 @@
     self.callbackField = nil;
     self.lblSecret = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 #pragma mark - View lifecycle
@@ -160,7 +155,6 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     // The location "unknown" error simply means the manager is currently unable to get the location.
-    // output error to some location
     NSLog(@"Oh snap! an error has occured.");
 }
 
