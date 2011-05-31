@@ -9,7 +9,7 @@
 #import "CarmenViewController.h"
 
 #define kAlphaNumeric @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ123456789"
-//#error delete this error when you've replaced the default url
+#error delete this error when you've replaced the default url
 #define kDefaultURL @"replace_me"
 
 @implementation CarmenViewController
