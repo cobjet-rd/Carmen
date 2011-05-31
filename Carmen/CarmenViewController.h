@@ -21,6 +21,7 @@
     IBOutlet UIButton *onButton;
     IBOutlet UITextField *callbackField;
     IBOutlet UILabel *lblSecret;
+    IBOutlet UILabel *lblSuccess;
 }
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) IBOutlet UISwitch *toggle;
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *offButton;
 @property (nonatomic, retain) IBOutlet UITextField *callbackField;
 @property (nonatomic, retain) IBOutlet UILabel *lblSecret;
+@property (nonatomic, retain) IBOutlet UILabel *lblSuccess;
 
 - (IBAction)toggleService:(UIButton *)sender;
 - (IBAction)sliderChanged:(id)sender;

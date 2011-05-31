@@ -9,7 +9,7 @@
 #import "CarmenViewController.h"
 
 #define kAlphaNumeric @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ123456789"
-#error delete this error when you've replaced the default url
+//#error delete this error when you've replaced the default url
 #define kDefaultURL @"replace_me"
 
 @implementation CarmenViewController
@@ -21,6 +21,7 @@
 @synthesize offButton;
 @synthesize callbackField;
 @synthesize lblSecret;
+@synthesize lblSuccess;
 
 - (void)dealloc {
     [locationManager release];
@@ -31,6 +32,7 @@
     [offButton release];
     [callbackField release];
     [lblSecret release];
+    [lblSuccess release];
     [super dealloc];
 }
 
@@ -46,6 +48,7 @@
     self.onButton = nil;
     self.callbackField = nil;
     self.lblSecret = nil;
+    self.lblSuccess = nil;
     [super viewDidUnload];
 }
 
@@ -73,6 +76,12 @@
     }
     self.lblSecret.text = secret;
     
+    //get saved url or output default
+    NSString *urlStr = [settings objectForKey:@"url"];
+    if (!urlStr) {
+        urlStr = kDefaultURL;
+    }
+    self.callbackField.text = urlStr;
     [super viewDidLoad];
 }
 
@@ -122,12 +131,11 @@
     NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
     if (locationAge > 5.0) return;
     
-    //callback default if field is empty
+    //setup post url
     NSString *urlStr = [NSString stringWithFormat:@"%@",callbackField.text];
-    if ([urlStr isEqualToString:@""]) {
-        urlStr = kDefaultURL;
-    }
-    NSURL *url = [NSURL URLWithString:@"urlStr"];
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    [settings setObject:urlStr forKey:@"url"];
+    NSURL *url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     //make timestamp
@@ -136,6 +144,8 @@
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *currentTime = [formatter stringFromDate:today];
     [formatter release];
+    
+    self.lblSuccess.text = currentTime;
     
     //url secret
     NSString *secret = lblSecret.text;
@@ -151,6 +161,8 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [manager stopUpdatingLocation];
+    [manager startMonitoringSignificantLocationChanges];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -164,17 +176,23 @@
     locationManager.delegate = nil;
 }
 
+- (void)stopMonitoringSignificantLocationChanges:(NSString *)state {
+    //TODO: update status indicator (to be added)
+    [locationManager stopMonitoringSignificantLocationChanges];
+    locationManager.delegate = nil;
+}
+
 #pragma mark - Background methods
 - (void)switchToBackgroundMode:(BOOL)background {
     if (background) {
         if (!isRunning) {
-            [self.locationManager stopUpdatingLocation];
+            [self.locationManager stopMonitoringSignificantLocationChanges];
             self.locationManager.delegate = nil;
         }
     } else {
         if (!isRunning) {
             self.locationManager.delegate = self;
-            [self.locationManager startUpdatingLocation];
+            [self.locationManager startMonitoringSignificantLocationChanges];
         }
     }
 }
