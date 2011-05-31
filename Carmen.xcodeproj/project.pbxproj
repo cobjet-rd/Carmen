@@ -22,8 +22,8 @@
 		612992ED138EC6F1002B3EF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 612992EB138EC6F1002B3EF4 /* InfoPlist.strings */; };
 		612992F0138EC6F1002B3EF4 /* CarmenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 612992EF138EC6F1002B3EF4 /* CarmenTests.h */; };
 		612992F2138EC6F1002B3EF4 /* CarmenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992F1138EC6F1002B3EF4 /* CarmenTests.m */; };
-		612992FD138EC891002B3EF4 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612992FC138EC891002B3EF4 /* CoreLocationController.m */; };
 		612992FF138EC99F002B3EF4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612992FE138EC99E002B3EF4 /* CoreLocation.framework */; };
+		61F6C4CB13956419003BACC3 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F6C4CA13956419003BACC3 /* CoreLocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +57,9 @@
 		612992EE138EC6F1002B3EF4 /* CarmenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarmenTests-Prefix.pch"; sourceTree = "<group>"; };
 		612992EF138EC6F1002B3EF4 /* CarmenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarmenTests.h; sourceTree = "<group>"; };
 		612992F1138EC6F1002B3EF4 /* CarmenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarmenTests.m; sourceTree = "<group>"; };
-		612992FB138EC891002B3EF4 /* CoreLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationController.h; sourceTree = "<group>"; };
-		612992FC138EC891002B3EF4 /* CoreLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationController.m; sourceTree = "<group>"; };
 		612992FE138EC99E002B3EF4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		61F6C4C913956419003BACC3 /* CoreLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationController.h; sourceTree = "<group>"; };
+		61F6C4CA13956419003BACC3 /* CoreLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +126,9 @@
 				612992D7138EC6F1002B3EF4 /* CarmenViewController.h */,
 				612992D8138EC6F1002B3EF4 /* CarmenViewController.m */,
 				612992DA138EC6F1002B3EF4 /* CarmenViewController.xib */,
+				61F6C4C913956419003BACC3 /* CoreLocationController.h */,
+				61F6C4CA13956419003BACC3 /* CoreLocationController.m */,
 				612992C9138EC6F1002B3EF4 /* Supporting Files */,
-				612992FB138EC891002B3EF4 /* CoreLocationController.h */,
-				612992FC138EC891002B3EF4 /* CoreLocationController.m */,
 			);
 			path = Carmen;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 				612992D0138EC6F1002B3EF4 /* main.m in Sources */,
 				612992D3138EC6F1002B3EF4 /* CarmenAppDelegate.m in Sources */,
 				612992D9138EC6F1002B3EF4 /* CarmenViewController.m in Sources */,
-				612992FD138EC891002B3EF4 /* CoreLocationController.m in Sources */,
+				61F6C4CB13956419003BACC3 /* CoreLocationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +374,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Carmen/Carmen-Prefix.pch";
 				INFOPLIST_FILE = "Carmen/Carmen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -387,7 +390,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Carmen/Carmen-Prefix.pch";
 				INFOPLIST_FILE = "Carmen/Carmen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +461,7 @@
 				612992F7138EC6F1002B3EF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		612992F8138EC6F1002B3EF4 /* Build configuration list for PBXNativeTarget "CarmenTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +470,7 @@
 				612992FA138EC6F1002B3EF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

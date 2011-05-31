@@ -16,7 +16,7 @@
 - (id)init {
     self = [super init];
     if(self != nil) {
-        self.locMgr = [[[CLLocationManager alloc] init] autorelease]; //Create new instance of locMgr
+        self.locMgr = [[[CLLocationManager alloc] init] autorelease];
         self.locMgr.delegate = self; //set delegate as self
     }
     return self;
