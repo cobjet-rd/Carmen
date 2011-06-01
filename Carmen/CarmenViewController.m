@@ -9,8 +9,9 @@
 #import "CarmenViewController.h"
 
 #define kAlphaNumeric @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ123456789"
-#error delete this error when you've replaced the default url
-#define kDefaultURL @"replace_me"
+#error DELETE_ME
+#define kDefaultURL @"REPLACEME" //default url used for empty url bar
+#define kDefaultSignificantURL @"REPLACEMETOO" //default url used for empty significant url bar
 
 @implementation CarmenViewController
 @synthesize locationManager;
@@ -20,8 +21,10 @@
 @synthesize onButton;
 @synthesize offButton;
 @synthesize callbackField;
+@synthesize sigCallbackField;
 @synthesize lblSecret;
 @synthesize lblSuccess;
+@synthesize postTypeSegments;
 
 - (void)dealloc {
     [locationManager release];
@@ -31,8 +34,10 @@
     [onButton release];
     [offButton release];
     [callbackField release];
+    [sigCallbackField release];
     [lblSecret release];
     [lblSuccess release];
+    [postTypeSegments release];
     [super dealloc];
 }
 
@@ -49,6 +54,8 @@
     self.callbackField = nil;
     self.lblSecret = nil;
     self.lblSuccess = nil;
+    self.postTypeSegments = nil;
+    self.sigCallbackField = nil;
     [super viewDidUnload];
 }
 
@@ -61,6 +68,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) 
                                                  name:UIKeyboardWillHideNotification object:self.view.window];
     isRunning = NO;
+    significantUpdate = NO;
     
     //generate secret if none exists and output
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -82,6 +90,13 @@
         urlStr = kDefaultURL;
     }
     self.callbackField.text = urlStr;
+    
+    urlStr = [settings objectForKey:@"significantURL"];
+    if (!urlStr) {
+        urlStr = kDefaultSignificantURL;
+    }
+    
+    self.sigCallbackField.text = urlStr;
     [super viewDidLoad];
 }
 
@@ -94,6 +109,7 @@
         self.pollingRadius.enabled = NO;
         self.pollingTimeout.enabled = NO;
         self.callbackField.enabled = NO;
+        self.postTypeSegments.enabled = NO;
         
         // Create the manager object 
         self.locationManager = [[[CLLocationManager alloc] init] autorelease];
@@ -111,6 +127,7 @@
         self.pollingRadius.enabled = YES;
         self.pollingTimeout.enabled = YES;
         self.callbackField.enabled = YES;
+        self.postTypeSegments.enabled = YES;
         
         //stop location services
         [self.locationManager stopUpdatingLocation];
@@ -132,9 +149,17 @@
     if (locationAge > 5.0) return;
     
     //setup post url
-    NSString *urlStr = [NSString stringWithFormat:@"%@",callbackField.text];
+    
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-    [settings setObject:urlStr forKey:@"url"];
+    [settings setObject:[NSString stringWithFormat:@"%@",callbackField.text] forKey:@"url"];
+    [settings setObject:[NSString stringWithFormat:@"%@",sigCallbackField.text] forKey:@"significantURL"];
+    
+    NSString *urlStr;
+    if (significantUpdate) {
+        urlStr = [NSString stringWithFormat:@"%@",sigCallbackField.text];
+    } else {
+        urlStr = [NSString stringWithFormat:@"%@",callbackField.text];
+    }
     NSURL *url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
@@ -161,8 +186,11 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [manager stopUpdatingLocation];
-    [manager startMonitoringSignificantLocationChanges];
+    if (significantUpdate) {
+        [manager stopUpdatingLocation];
+        [manager startMonitoringSignificantLocationChanges];
+    }
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -186,13 +214,22 @@
 - (void)switchToBackgroundMode:(BOOL)background {
     if (background) {
         if (!isRunning) {
-            [self.locationManager stopMonitoringSignificantLocationChanges];
+            if (significantUpdate) {
+                [self.locationManager stopMonitoringSignificantLocationChanges];
+            } else {
+                [self.locationManager stopUpdatingLocation];
+            }
             self.locationManager.delegate = nil;
         }
     } else {
         if (!isRunning) {
             self.locationManager.delegate = self;
-            [self.locationManager startMonitoringSignificantLocationChanges];
+            if (significantUpdate) {
+                [self.locationManager startMonitoringSignificantLocationChanges];
+            } else {
+                [self.locationManager startUpdatingLocation];
+            }
+            
         }
     }
 }
@@ -235,6 +272,22 @@
 
 - (IBAction)hideKeyboard:(id)sender {
     [(UITextView *)sender resignFirstResponder];
+}
+
+#pragma mark - segmented control methods
+- (IBAction)segmentChanged:(id)sender {
+    significantUpdate = !significantUpdate;
+    if (significantUpdate) {
+        self.pollingRadius.enabled = NO;
+        self.pollingTimeout.enabled = NO;
+        self.callbackField.hidden = YES;
+        self.sigCallbackField.hidden = NO;
+    } else {
+        self.pollingRadius.enabled = YES;
+        self.pollingTimeout.enabled = YES;
+        self.callbackField.hidden = NO;
+        self.sigCallbackField.hidden = YES;
+    }
 }
 
 #pragma mark -
