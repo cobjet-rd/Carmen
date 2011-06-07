@@ -15,8 +15,12 @@
 
 @implementation CarmenViewController
 @synthesize locationManager;
+@synthesize then;
+@synthesize fullView;
+@synthesize sigView;
+
 @synthesize pollingRadius;
-@synthesize pollingTimeout;
+@synthesize pollingInterval;
 @synthesize toggle;
 @synthesize onButton;
 @synthesize offButton;
@@ -28,8 +32,11 @@
 
 - (void)dealloc {
     [locationManager release];
+    [then release];
+    [sigView release];
+    [fullView release];
     [toggle release];
-    [pollingTimeout release];
+    [pollingInterval release];
     [pollingRadius release];
     [onButton release];
     [offButton release];
@@ -46,9 +53,11 @@
 }
 
 - (void)viewDidUnload {
+    self.fullView = nil;
+    self.sigView = nil;
     self.toggle = nil;
     self.pollingRadius = nil;
-    self.pollingTimeout = nil;
+    self.pollingInterval = nil;
     self.offButton = nil;
     self.onButton = nil;
     self.callbackField = nil;
@@ -69,6 +78,7 @@
                                                  name:UIKeyboardWillHideNotification object:self.view.window];
     isRunning = NO;
     significantUpdate = NO;
+    firstPass = YES;
     
     //generate secret if none exists and output
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -97,6 +107,10 @@
     }
     
     self.sigCallbackField.text = urlStr;
+    
+    //set up initial time
+    self.then = [NSDate date];
+    
     [super viewDidLoad];
 }
 
@@ -107,7 +121,7 @@
         self.offButton.hidden = NO;
         self.onButton.hidden = YES;
         self.pollingRadius.enabled = NO;
-        self.pollingTimeout.enabled = NO;
+        self.pollingInterval.enabled = NO;
         self.callbackField.enabled = NO;
         self.postTypeSegments.enabled = NO;
         
@@ -117,7 +131,7 @@
         
         //user settings from sliders
         locationManager.desiredAccuracy = pow(10, [self.pollingRadius value]);
-        locationManager.distanceFilter = [self.pollingTimeout value];
+        locationManager.distanceFilter = 45.0f;
         
         [locationManager startUpdatingLocation];
     } else {
@@ -125,7 +139,7 @@
         self.onButton.hidden = NO;
         self.offButton.hidden = YES;
         self.pollingRadius.enabled = YES;
-        self.pollingTimeout.enabled = YES;
+        self.pollingInterval.enabled = YES;
         self.callbackField.enabled = YES;
         self.postTypeSegments.enabled = YES;
         
@@ -164,31 +178,40 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     //make timestamp
-    NSDate *today = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    NSString *currentTime = [formatter stringFromDate:today];
-    [formatter release];
+    NSDate *now = [NSDate date];
     
-    self.lblSuccess.text = currentTime;
-    
-    //url secret
-    NSString *secret = lblSecret.text;
-    
-    //prepare parameter string
-    NSString *params = [[NSString alloc] initWithFormat:@"lat=%f&long=%f&time=%@&secret=%@", 
-                        newLocation.coordinate.latitude, 
-                        newLocation.coordinate.longitude,
-                        currentTime,
-                        secret];
-    
-    //make the request
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (significantUpdate) {
-        [manager stopUpdatingLocation];
-        [manager startMonitoringSignificantLocationChanges];
+    double pollInterval = 3600*[self.pollingInterval value];
+    if ([now timeIntervalSinceDate:then] >= pollInterval || firstPass) {
+        firstPass = !firstPass;
+        //save last update
+        self.then = now;
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        NSString *currentTime = [formatter stringFromDate:now];
+        [formatter release];
+        
+        //TODO: code an actual success message...
+        self.lblSuccess.text = currentTime;
+        
+        //url secret
+        NSString *secret = lblSecret.text;
+        
+        //prepare parameter string
+        NSString *params = [[NSString alloc] initWithFormat:@"lat=%f&long=%f&time=%@&secret=%@", 
+                            newLocation.coordinate.latitude, 
+                            newLocation.coordinate.longitude,
+                            currentTime,
+                            secret];
+        
+        //make the request
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+        [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        if (significantUpdate) {
+            [manager stopUpdatingLocation];
+            [manager startMonitoringSignificantLocationChanges];
+        }
     }
     
 }
@@ -278,13 +301,13 @@
 - (IBAction)segmentChanged:(id)sender {
     significantUpdate = !significantUpdate;
     if (significantUpdate) {
-        self.pollingRadius.enabled = NO;
-        self.pollingTimeout.enabled = NO;
+        self.sigView.hidden = NO;
+        self.fullView.hidden = YES;
         self.callbackField.hidden = YES;
         self.sigCallbackField.hidden = NO;
     } else {
-        self.pollingRadius.enabled = YES;
-        self.pollingTimeout.enabled = YES;
+        self.sigView.hidden = YES;
+        self.fullView.hidden = NO;
         self.callbackField.hidden = NO;
         self.sigCallbackField.hidden = YES;
     }
