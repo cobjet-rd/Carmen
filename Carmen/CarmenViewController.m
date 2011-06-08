@@ -9,7 +9,7 @@
 #import "CarmenViewController.h"
 
 #define kAlphaNumeric @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ123456789"
-#error DELETE_ME
+//#error DELETE_ME
 #define kDefaultURL @"REPLACEME" //default url used for empty url bar
 #define kDefaultSignificantURL @"REPLACEMETOO" //default url used for empty significant url bar
 
@@ -111,6 +111,9 @@
     //set up initial time
     self.then = [NSDate date];
     
+    //bring initial controls to the front
+    [self.view bringSubviewToFront:self.fullView];
+    
     [super viewDidLoad];
 }
 
@@ -180,7 +183,7 @@
     //make timestamp
     NSDate *now = [NSDate date];
     
-    double pollInterval = 3600*[self.pollingInterval value];
+    double pollInterval = 60*[self.pollingInterval value];
     if ([now timeIntervalSinceDate:then] >= pollInterval || firstPass) {
         firstPass = !firstPass;
         //save last update
@@ -301,13 +304,12 @@
 - (IBAction)segmentChanged:(id)sender {
     significantUpdate = !significantUpdate;
     if (significantUpdate) {
-        self.sigView.hidden = NO;
-        self.fullView.hidden = YES;
+        //self.sigView.hidden = NO;
+        [self.view bringSubviewToFront:self.sigView];
         self.callbackField.hidden = YES;
         self.sigCallbackField.hidden = NO;
     } else {
-        self.sigView.hidden = YES;
-        self.fullView.hidden = NO;
+        [self.view bringSubviewToFront:self.fullView];
         self.callbackField.hidden = NO;
         self.sigCallbackField.hidden = YES;
     }
